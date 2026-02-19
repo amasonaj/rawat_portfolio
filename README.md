@@ -8,6 +8,7 @@
 A personal portfolio website built with HTML, CSS, JavaScript, PHP, and MySQL. The site showcases academic background, technical skills, project experience, and integrates multiple external APIs with a real database backend via XAMPP.
 
 Structured as a single-page application with smooth scroll navigation:
+
 **Home → Skills → Credentials → Experience → GitHub → Blog → Testimonials → About**
 
 ---
@@ -21,6 +22,7 @@ Structured as a single-page application with smooth scroll navigation:
    - Go to `http://localhost/phpmyadmin`
    - Click **Import** → select `database.sql` → click **Go**
 5. Open your browser and go to:
+
 ```
 http://localhost/rawat/index.html
 ```
@@ -53,8 +55,20 @@ rawat/
 │   └── get_testimonials.php    ← Returns testimonials as JSON
 │
 └── assets/
-    ├── me.jpg                  ← Profile photo (dark mode)
-    └── me2.jpg                 ← Profile photo (light mode)
+    ├── me.jpg                  ← Profile photo (alternate)
+    ├── me2.png                 ← Profile photo (main, used in home section)
+    ├── me_dark.png             ← Profile photo (dark mode)
+    ├── me_light.png            ← Profile photo (light mode)
+    └── projects/
+        ├── smartchair.png
+        ├── teacher-dashboard.png
+        ├── museolink.png
+        ├── calculator.png
+        ├── music-player.png
+        ├── file-manager.png
+        ├── parkners.png
+        ├── oceanshore.png
+        └── kwartrack.png
 ```
 
 ---
@@ -144,14 +158,44 @@ rawat/
 
 | Section | Content |
 |---|---|
-| Home | Introduction, weather widget, social links (Facebook, LinkedIn, Email, Phone) |
-| Skills | 11 technologies as interactive 3D flip cards |
+| Home | Introduction, weather widget, typing animation, social links (Facebook, LinkedIn, Email, Phone) |
+| Skills | 12 technologies as interactive 3D flip cards |
 | Credentials | Elementary, High School, and College education cards |
-| Experience | 9 academic and personal projects in an alternating timeline |
+| Experience | 9 academic and personal projects in a card grid with modal previews |
 | GitHub | Live repos and profile stats via GitHub API |
 | Blog | Tech articles via Dev.to API |
 | Testimonials | Public testimonial wall + submission form (Transaction #2) |
 | About | Personal background, contact info, contact form (Transaction #1) |
+
+---
+
+## Projects (Experience Section)
+
+| # | Project | Course | Year | Stack |
+|---|---|---|---|---|
+| 1 | SmarChair 3D Prototype | Intro to HCI | 2025 | Blender |
+| 2 | Teacher Dashboard Prototype | Intro to HCI | 2025 | Figma |
+| 3 | MuseoLink – Museum Mobile App | Application Development | 2025 | Java, Android Studio, Figma |
+| 4 | Calculator Application | Application Development | 2025 | Java, Android Studio |
+| 5 | Music Player System | Data Structures & Algorithms | 2025 | Java, IntelliJ IDEA |
+| 6 | File Manager System | Computer Programming II | 2025 | Java, IntelliJ IDEA |
+| 7 | Parkners – Management System | Data Structures & Algorithms | 2025 | Java, VS Code |
+| 8 | Oceanshore Beach Resort – Website | Intro to Programming | 2024 | HTML, CSS, JavaScript |
+| 9 | KwarTrack – Financial Tracking System | Computer Programming I | 2024 | Java |
+
+---
+
+## UI Features
+
+- Dark / Light theme toggle
+- Scroll progress bar
+- Custom cursor dot
+- Typing animation in hero section
+- 3D flip skill cards
+- Scroll-triggered fade-up animations
+- Project modal with screenshot gallery
+- Back-to-top button
+- Responsive layout
 
 ---
 
