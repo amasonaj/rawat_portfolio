@@ -60,16 +60,7 @@ rawat/
     ├── me_dark.png             ← Profile photo (dark mode)
     ├── me_light.png            ← Profile photo (light mode)
     └── projects/
-        ├── smartchair.png
-        ├── teacher-dashboard.png
-        ├── museolink.png
-        ├── calculator.png
-        ├── music-player.png
-        ├── file-manager.png
-        ├── parkners.png
-        ├── oceanshore.png
-        └── kwartrack.png
-```
+        ├── images
 
 ---
 
@@ -179,9 +170,10 @@ rawat/
 | 4 | Calculator Application | Application Development | 2025 | Java, Android Studio |
 | 5 | Music Player System | Data Structures & Algorithms | 2025 | Java, IntelliJ IDEA |
 | 6 | File Manager System | Computer Programming II | 2025 | Java, IntelliJ IDEA |
-| 7 | Parkners – Management System | Data Structures & Algorithms | 2025 | Java, VS Code |
-| 8 | Oceanshore Beach Resort – Website | Intro to Programming | 2024 | HTML, CSS, JavaScript |
-| 9 | KwarTrack – Financial Tracking System | Computer Programming I | 2024 | Java |
+| 7 | Unggoy Ungguyan – Ascii Game | Data Structures & Algorithms | 2025 | Java, VS Code |
+| 8 | Parkners – Management System | Data Structures & Algorithms | 2025 | Java, VS Code |
+| 9 | Oceanshore Beach Resort – Website | Intro to Programming | 2024 | HTML, CSS, JavaScript |
+| 10 | KwarTrack – Financial Tracking System | Computer Programming I | 2024 | Java |
 
 ---
 
