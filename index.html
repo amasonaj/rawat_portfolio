@@ -11,25 +11,36 @@
 <body>
 <div id="scroll-progress"></div>
 <div id="cursor-dot"></div>
-    <!-- ═══════════════════════════════
-         NAVIGATION
-    ═══════════════════════════════ -->
+
     <nav>
         <div class="logo">RAWAT</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#credentials">Credentials</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#github">GitHub</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#about">About</a></li>
-            <button id="theme-toggle" aria-label="Toggle dark/light mode">
-                <span id="theme-icon"></span>
+
+            <li class="nav-more">
+                <button class="nav-more-btn" id="nav-more-btn" aria-expanded="false" aria-label="More navigation links">
+                <svg class="nav-more-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="13" cy="32" r="5"/>
+                    <circle cx="32" cy="32" r="5"/>
+                    <circle cx="51" cy="32" r="5"/>
+                </svg>
             </button>
-        </ul>
-    </nav>
+            <ul class="nav-more-menu" id="nav-more-menu">
+                <li><a href="#credentials">Credentials</a></li>
+                <li><a href="#github">GitHub</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+        </li>
+
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">
+            <span id="theme-icon"></span>
+        </button>
+    </ul>
+</nav>
 
     <!-- ═══════════════════════════════
          HOME
@@ -880,7 +891,10 @@
 
         <div class="footer-bottom">
             <span class="footer-line"></span>
-            <p class="footer-copy">Janos Abel O. Rawat · BSIT 2A · CNSC</p>
+            <div class="footer-copy-wrap">
+                <p class="footer-copy">Janos Abel O. Rawat · BSIT 2A · CNSC</p>
+                <p class="footer-timestamp" id="footer-timestamp"></p>
+            </div>
             <span class="footer-line"></span>
         </div>
     </footer>

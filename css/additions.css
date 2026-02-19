@@ -1126,3 +1126,131 @@ body:not([data-theme="light"]):not(.light) #back-to-top {
         display: none !important;
     }
 }
+
+.footer-copy-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.footer-timestamp {
+    font-family: var(--font-mono);      /* your existing mono var */
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    opacity: 0.45;
+    margin: 0;
+    user-select: none;
+}
+
+.nav-more {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-more-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: 0.5rem;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+.nav-more-btn:hover,
+.nav-more-btn[aria-expanded="true"] {
+    border-color: var(--orange);
+    color: var(--orange);
+    background: rgba(224, 114, 64, 0.1);
+}
+
+.nav-more-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ── Dropdown menu — matches nav design language ── */
+.nav-more-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+
+    /* Mirrors nav: blurred dark glass */
+    background: rgba(8, 10, 14, 0.92);
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.4rem;
+    min-width: 170px;
+    list-style: none;
+    margin: 0;
+
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1100;
+}
+
+body.light .nav-more-menu {
+    background: rgba(244, 240, 234, 0.92);
+}
+
+.nav-more-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+/* Small caret pointing up toward the button */
+.nav-more-menu::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 18px;
+    width: 9px;
+    height: 9px;
+    background: rgba(8, 10, 14, 0.92);
+    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    transform: rotate(45deg);
+}
+
+body.light .nav-more-menu::before {
+    background: rgba(244, 240, 234, 0.92);
+}
+
+/* Links match existing nav-links li a exactly */
+.nav-more-menu li a {
+    display: block;
+    padding: 6px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color 0.2s, background 0.2s;
+}
+
+.nav-more-menu li a:hover,
+.nav-more-menu li a.active {
+    color: var(--orange);
+    background: rgba(224, 114, 64, 0.1);
+}

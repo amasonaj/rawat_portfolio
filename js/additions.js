@@ -462,4 +462,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+(function () {
+    const el = document.getElementById('footer-timestamp');
+    if (!el) return;
 
+    const pad = n => String(n).padStart(2, '0');
+
+    function tick() {
+        const now  = new Date();
+        const date = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+        const time = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+        el.textContent = `${date} · ${time}`;
+    }
+
+    tick();
+    setInterval(tick, 1000); // live clock — remove setInterval if you want static load time
+})();
+
+
+(function () {
+    const btn  = document.getElementById('nav-more-btn');
+    const menu = document.getElementById('nav-more-menu');
+    if (!btn || !menu) return;
+
+    // Toggle on button click
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close when clicking a menu link
+    menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            menu.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', () => {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+    });
+})();
