@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/additions.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 </head>
 <body>
 <div id="scroll-progress"></div>
@@ -979,99 +978,6 @@
     /* ─── EmailJS (API #4) ─── */
     emailjs.init('HQLn-iR1ykvFSTAjy');
     </script>
-
-    <script>
-/* ─── Supabase Setup ─── */
-const _supabase = supabase.createClient(
-  'https://hggtdtxhelctqnpshuth.supabase.co',       // ← replace this
-  'sb_publishable_z26IE1rSMUZ9NA95XaC-xw_BJ3Ro5uk'   // ← replace this
-);
-
-/* ─── Load Testimonials Wall ─── */
-async function loadTestimonials() {
-  const wall = document.getElementById('testimonials-wall');
-  const { data, error } = await _supabase
-    .from('testimonials')
-    .select('*')
-    .eq('is_approved', true)
-    .order('submitted_at', { ascending: false });
-
-  if (error || !data.length) {
-    wall.innerHTML = '<p style="opacity:0.4;">No testimonials yet.</p>';
-    return;
-  }
-
-  wall.innerHTML = data.map(t => `
-    <div class="testimonial-card fade-up">
-      <p class="t-message">"${t.message}"</p>
-      <div class="t-footer">
-        <div>
-          <strong class="t-name">${t.name}</strong>
-          <span class="t-role">${t.role}</span>
-        </div>
-        <span class="t-stars">${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}</span>
-      </div>
-    </div>
-  `).join('');
-}
-loadTestimonials();
-
-/* ─── Submit Testimonial ─── */
-document.getElementById('testimonial-form').addEventListener('submit', async () => {
-  const name    = document.getElementById('t_name').value.trim();
-  const role    = document.getElementById('t_role').value.trim();
-  const message = document.getElementById('t_message').value.trim();
-  const rating  = document.querySelector('input[name="rating"]:checked')?.value;
-  const status  = document.getElementById('testimonial-status');
-  const btn     = document.getElementById('testimonial-submit-btn');
-
-  if (!rating) { status.textContent = '⚠ Please select a star rating.'; return; }
-
-  btn.disabled = true;
-  btn.textContent = 'Submitting…';
-
-  const { error } = await _supabase.from('testimonials').insert([
-    { name, role, message, rating: parseInt(rating) }
-  ]);
-
-  if (error) {
-    status.textContent = '❌ Something went wrong. Please try again.';
-  } else {
-    status.textContent = '✅ Thank you! Your testimonial has been submitted.';
-    document.getElementById('testimonial-form').reset();
-    loadTestimonials(); // refresh wall
-  }
-  btn.disabled = false;
-  btn.textContent = 'Submit Testimonial';
-});
-
-/* ─── Submit Contact Form ─── */
-document.getElementById('contact-form').addEventListener('submit', async () => {
-  const from_name  = document.getElementById('from_name').value.trim();
-  const from_email = document.getElementById('from_email').value.trim();
-  const subject    = document.getElementById('subject').value.trim();
-  const message    = document.getElementById('message').value.trim();
-  const status     = document.getElementById('form-status');
-  const btn        = document.getElementById('send-btn');
-
-  btn.disabled = true;
-  btn.textContent = 'Sending…';
-
-  const { error } = await _supabase.from('contact_messages').insert([
-    { from_name, from_email, subject, message }
-  ]);
-
-  if (error) {
-    status.textContent = '❌ Failed to send. Please try again.';
-  } else {
-    status.textContent = '✅ Message sent! I\'ll get back to you soon.';
-    document.getElementById('contact-form').reset();
-  }
-  btn.disabled = false;
-  btn.textContent = 'Send Message';
-});
-</script>
-
         <script src="js/additions.js"></script>
 
 

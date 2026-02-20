@@ -79,7 +79,7 @@ document.getElementById('contact-form')?.addEventListener('submit', async functi
 
     try {
         // Save to MySQL
-const res = await fetch('https://amasonaj.infinityfreeapp.com/submit_contact.php', {
+        const res  = await fetch('/rawat/api/submit_contact.php', {
             method:  'POST',
             headers: { 'Content-Type': 'application/json' },
             body:    JSON.stringify({ from_name: name, from_email: email, subject, message }),
@@ -158,7 +158,7 @@ const res = await fetch('https://amasonaj.infinityfreeapp.com/submit_contact.php
         if (!wall) return;
         wall.innerHTML = `<div class="testimonials-empty-state">Loading…</div>`;
         try {
-            const res  = await fetch('https://amasonaj.infinityfreeapp.com/get_testimonials.php');
+            const res  = await fetch('/rawat/api/get_testimonials.php');
             const data = await res.json();
             renderWall(data.success ? data.testimonials : []);
         } catch (err) {
@@ -196,7 +196,7 @@ const res = await fetch('https://amasonaj.infinityfreeapp.com/submit_contact.php
 
         try {
             // POST to PHP → MySQL
-            const res  = await fetch('https://amasonaj.infinityfreeapp.com/submit_testimonial.php', {
+            const res  = await fetch('/rawat/api/submit_testimonial.php', {
                 method:  'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body:    JSON.stringify({ name: nameVal, role: roleVal, message: messageVal, rating: ratingVal }),
