@@ -1,12 +1,11 @@
 <?php
 
 define('DB_HOST', 'sql105.infinityfree.com');
-define('DB_USER', 'if0_41206265'); 
-define('DB_PASS', 'amasonaj31');      
-define('DB_NAME', 'if0_41206265_rawat_portfolio');
+define('DB_USER', 'if0_41206265');      // your MySQL username
+define('DB_PASS', 'YOUR_ACTUAL_PASSWORD');  // the password you set       
+define('DB_NAME', 'if0_41206265_XXX');  // replace XXX with your actual db name
 define('DB_CHARSET', 'utf8mb4');
 
-//default
 // define('DB_HOST', 'localhost');
 // define('DB_USER', 'root');      
 // define('DB_PASS', '');         
