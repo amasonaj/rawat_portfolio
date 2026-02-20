@@ -1,10 +1,17 @@
 <?php
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');      
-define('DB_PASS', '');         
-define('DB_NAME', 'rawat_portfolio');
+define('DB_HOST', 'sql105.infinityfree.com');
+define('DB_USER', 'if0_41206265'); 
+define('DB_PASS', 'amasonaj31');      
+define('DB_NAME', 'if0_41206265_rawat_portfolio');
 define('DB_CHARSET', 'utf8mb4');
+
+//default
+// define('DB_HOST', 'localhost');
+// define('DB_USER', 'root');      
+// define('DB_PASS', '');         
+// define('DB_NAME', 'rawat_portfolio');
+// define('DB_CHARSET', 'utf8mb4');
 
 function getDB(): PDO {
     static $pdo = null;
