@@ -79,7 +79,7 @@ document.getElementById('contact-form')?.addEventListener('submit', async functi
 
     try {
         // Save to MySQL
-        const res  = await fetch('/rawat/api/submit_contact.php', {
+        const res  = await fetch('https://amasonaj.infinityfreeapp.com/api/submit_contact.php', {
             method:  'POST',
             headers: { 'Content-Type': 'application/json' },
             body:    JSON.stringify({ from_name: name, from_email: email, subject, message }),
@@ -102,7 +102,7 @@ document.getElementById('contact-form')?.addEventListener('submit', async functi
             statusEl.className   = 'error';
         }
     } catch (err) {
-        statusEl.textContent = '❌ Network error. Make sure XAMPP is running.';
+        statusEl.textContent = '❌ Network error. Please try again later.';
         statusEl.className   = 'error';
         console.error(err);
     } finally {
@@ -158,12 +158,12 @@ document.getElementById('contact-form')?.addEventListener('submit', async functi
         if (!wall) return;
         wall.innerHTML = `<div class="testimonials-empty-state">Loading…</div>`;
         try {
-            const res  = await fetch('/rawat/api/get_testimonials.php');
+            const res  = await fetch('https://amasonaj.infinityfreeapp.com/api/get_testimonials.php');
             const data = await res.json();
             renderWall(data.success ? data.testimonials : []);
         } catch (err) {
             const wall = document.getElementById('testimonials-wall');
-            if (wall) wall.innerHTML = `<div class="testimonials-empty-state">⚠ Unable to connect.<br/>Make sure XAMPP is running.</div>`;
+            if (wall) wall.innerHTML = `<div class="testimonials-empty-state">⚠ Unable to connect.<br/>Please try again later.</div>`;
             console.error(err);
         }
     }
@@ -196,7 +196,7 @@ document.getElementById('contact-form')?.addEventListener('submit', async functi
 
         try {
             // POST to PHP → MySQL
-            const res  = await fetch('/rawat/api/submit_testimonial.php', {
+            const res  = await fetch('https://amasonaj.infinityfreeapp.com/api/submit_testimonial.php', {
                 method:  'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body:    JSON.stringify({ name: nameVal, role: roleVal, message: messageVal, rating: ratingVal }),
@@ -211,7 +211,7 @@ document.getElementById('contact-form')?.addEventListener('submit', async functi
                 showStatus(`❌ ${data.message}`, 'error');
             }
         } catch (err) {
-            showStatus('❌ Network error. Make sure XAMPP is running.', 'error');
+            showStatus('❌ Network error. Please try again later.', 'error');
             console.error(err);
         } finally {
             btn.disabled    = false;

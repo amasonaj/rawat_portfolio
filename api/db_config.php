@@ -1,9 +1,9 @@
 <?php
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');      
-define('DB_PASS', '');         
-define('DB_NAME', 'rawat_portfolio');
+define('DB_HOST', 'sql105.infinityfree.com');
+define('DB_USER', 'if0_41206265');      
+define('DB_PASS', 'amasonaj31');         
+define('DB_NAME', 'if0_41206265_rawat_portfolio');
 define('DB_CHARSET', 'utf8mb4');
 
 function getDB(): PDO {
@@ -27,8 +27,8 @@ function getDB(): PDO {
     return $pdo;
 }
 
-// Allow requests from same origin (XAMPP local)
-header('Access-Control-Allow-Origin: *');
+// Allow requests from your GitHub Pages domain
+header('Access-Control-Allow-Origin: https://amasonaj.github.io');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
