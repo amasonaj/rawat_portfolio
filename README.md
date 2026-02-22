@@ -20,7 +20,7 @@ Structured as a single-page application with smooth scroll navigation:
 3. Open XAMPP Control Panel — start **Apache** and **MySQL**
 4. Import the database:
    - Go to `http://localhost/phpmyadmin`
-   - Click **Import** → select `database.sql` → click **Go**
+   - Click **Import** → select `rawat_portfolio.sql` → click **Go**
 5. Open your browser and go to:
 
 ```
