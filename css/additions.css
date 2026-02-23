@@ -1254,3 +1254,71 @@ body.light .nav-more-menu::before {
     color: var(--orange);
     background: rgba(224, 114, 64, 0.1);
 }
+
+/* ═══════════════════════════════════════════════
+   MOBILE NAV FIX — paste at END of additions.css
+   ═══════════════════════════════════════════════ */
+
+@media (max-width: 700px) {
+    /* Hide primary bar links — JS clones them into ⋯ dropdown */
+    .nav-links > li:not(.nav-more) {
+        display: none !important;
+    }
+
+    /* ⋯ button always visible */
+    .nav-links > li.nav-more {
+        display: flex !important;
+    }
+
+    /* Dark mode toggle always visible */
+    #theme-toggle {
+        display: flex !important;
+    }
+
+    /* Comfortable tap targets in dropdown */
+    .nav-more-menu li a {
+        padding: 10px 14px;
+        font-size: 0.82rem;
+    }
+
+    /* Divider JS injects between primary & secondary links */
+    .nav-more-menu li#nav-mobile-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 0.3rem 0.5rem;
+        pointer-events: none;
+        list-style: none;
+    }
+}
+
+/* Undo style.css @media(max-width:640px) → hides all .nav-links li a */
+@media (max-width: 640px) {
+    .nav-links > li.nav-more   { display: flex  !important; }
+    .nav-links > li.nav-more a { display: block !important; }
+    #theme-toggle              { display: flex  !important; }
+}
+
+/* Undo style.css @media(max-width:480px) → hides all .nav-links li */
+@media (max-width: 480px) {
+    .nav-links > li.nav-more { display: flex !important; }
+    #theme-toggle            { display: flex !important; }
+}
+
+@media (max-width: 400px) {
+    .nav-more-menu {
+        right: -8px;
+        min-width: 185px;
+    }
+}
+
+
+@media (max-width: 640px) {
+    .nav-links li.nav-more        { display: flex !important; }
+    .nav-links li.nav-more a      { display: block !important; }
+    #theme-toggle                 { display: flex !important; }
+}
+
+@media (max-width: 480px) {
+    .nav-links li.nav-more        { display: flex !important; }
+    #theme-toggle                 { display: flex !important; }
+}

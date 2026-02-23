@@ -1042,45 +1042,6 @@ body.light #skills { background: var(--bg-surface); }
     .nav-links li a { font-size: 0.7rem; padding: 5px 8px; }
 }
 
-/* =========================
-   RESPONSIVE — MOBILE
-   ========================= */
-@media (max-width: 640px) {
-    section { padding: 5rem 6% 5rem; }
-
-    #home { padding-top: 5rem; gap: 2.5rem; }
-
-    .home-content h1 { font-size: 2.6rem; }
-    .home-content h2 { font-size: 0.75rem; }
-    .home-content p  { font-size: 0.95rem; }
-
-    .profile-image { max-width: 240px; }
-    .profile-image::before, .profile-image::after { display: none; }
-
-    .section-title { font-size: 2.2rem; margin-bottom: 2.5rem; }
-
-    .skills-grid { grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
-    .flip-front svg { width: 38px; height: 38px; }
-
-    .credentials-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .credential-card { padding: 2rem; }
-
-    .contact-info { grid-template-columns: 1fr; }
-
-    nav { padding: 0 5%; }
-    .nav-links li a { display: none; }
-    .nav-links li:last-child a { display: block; } /* keep at least one? */
-    /* Actually hide nav text on very small screens, keep logo + toggle */
-    .nav-links { gap: 0.4rem; }
-}
-
-/* Mobile — hide most nav items, simplify */
-@media (max-width: 480px) {
-    .nav-links li { display: none; }
-    .nav-links li:last-of-type { display: none; }
-    /* Keep theme toggle accessible */
-}
-
 /* ── Contact Split Layout ── */
 .contact-split {
     display: grid;
