@@ -15,18 +15,6 @@ Structured as a single-page application with smooth scroll navigation:
 
 ## How to Run
 
-### Option 1 — Live Hosted Version (Recommended if XAMPP is unavailable)
-
-Access the portfolio directly online — no setup required:
-
-🌐 **[https://amasonaj.infinityfreeapp.com/?i=1](https://amasonaj.infinityfreeapp.com/?i=1)**
-
-> Use this if you cannot run XAMPP locally or just want a quick preview.
-
----
-
-### Option 2 — Local Setup via XAMPP
-
 1. Install [XAMPP](https://www.apachefriends.org/)
 2. Place the entire project folder inside `C:/xampp/htdocs/`
 3. Open XAMPP Control Panel — start **Apache** and **MySQL**
@@ -73,7 +61,6 @@ rawat/
     ├── me_light.png            ← Profile photo (light mode)
     └── projects/
         ├── images
-```
 
 ---
 
