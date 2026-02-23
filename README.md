@@ -49,7 +49,7 @@ http://localhost/rawat/index.html
 rawat/
 │
 ├── index.html                  ← Main website (all sections)
-├── database.sql                ← Database schema + seed data
+├── rawat_portfolio.sql                ← Database schema + seed data
 ├── README.md                   ← Documentation
 │
 ├── css/
